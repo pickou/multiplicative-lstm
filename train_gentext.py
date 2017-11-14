@@ -7,12 +7,16 @@ def train_gentext(filename, prime):
     """ train the mlstm and generate new text with prime
 
     """
-    batch_size = 64
+    batch_size = 64 
     num_steps = 100
     hidden_units = 512
-    lr = 5e-4
+    lr = 0.005
     keep_prob = 0.5
+<<<<<<< HEAD
     epochs = 2 
+=======
+    epochs = 50 
+>>>>>>> b2f1c7e4a05b4df7e1648b10dab2f919f8af4a7b
     n_save = 1500
     n_samples = 400
 
