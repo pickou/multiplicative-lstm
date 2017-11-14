@@ -1,4 +1,5 @@
 #  An implementation of mLSTM
+### 1. file desicription
 + MultiplicativeLSTMCell.py
 
 The core is written by tam17aki, 
@@ -10,3 +11,18 @@ Ben Krause, Liang Lu, Iain Murray, and Steve Renals, "Multiplicative LSTM for se
 + mLSTM.py
 
 This is an implementation which uses mLSTM to predict the next character of a sentence.
+
++ train_gentext.py
+
+Train and generate text with the starting sentence "This morning", the restore process is right after training.
+
++ load_gentext.py
+
+Load checkpoint and restore parameters, then generate text.
+
+### 2. result
+
++ using python2 to run train_gentext.py and load_gentext.py
+
+```
+```
