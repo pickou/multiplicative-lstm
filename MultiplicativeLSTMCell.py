@@ -151,7 +151,7 @@ class MultiplicativeLSTMCell(RNNCell):
                     tf.sigmoid(i + w_i_diag * c_prev) * j
             else:
                 c = c_prev * tf.sigmoid(f + self.forget_bias) + \
-                    tf.sigmoid(i) * j
+                    tf.sigmoid(i) * self.activation(j)
 
             if self.cell_clip is not None:
                 c = tf.clip_by_value(c, -self.cell_clip, self.cell_clip)
@@ -160,7 +160,7 @@ class MultiplicativeLSTMCell(RNNCell):
                 h = tf.sigmoid(o + w_o_diag * c) * \
                     self.activation(c * (o + w_o_diag * c))
             else:
-                h = self.activation(c * o)
+                h = self.activation(c)*tf.sigmoid(o)
 
             if self.num_proj is not None:
                 w_proj = tf.get_variable(

@@ -12,7 +12,7 @@ def train_gentext(filename, prime):
     hidden_units = 512
     lr = 5e-4
     keep_prob = 0.5
-    epochs = 20 
+    epochs = 2 
     n_save = 1500
     n_samples = 400
 
