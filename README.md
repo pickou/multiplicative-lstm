@@ -25,12 +25,37 @@ Load checkpoint and restore parameters, then generate text.
 
 + using python2 to run train_gentext.py and load_gentext.py
 
+train_gentext.py result, the text make sense.
 ```
+('Training epoch: 2/2***', 'Training steps: 500***', 'Training loss: 1.6599***', '0.8138 sec/per batch')
+This morning how
+so menty there a dingry was not be their conversnon had not been to to hor that they was not had been so would bating the sout. All at her to her some house, bown sacking at the saces and said of
+ his
+witches of the propission his hand of his husband.
 
+"Well, all which his was as it as answained to and he saw. A drovin and with the money
+have to delight.
+
+"Yes, this the simply. That he w
+```
+load_gentext.py result, make sense.
+
+```
+This morning what who saw they wife to this. There and allet her tomer as his weatther to stall that the consed and sack that the bagh falt of
+this who stept,
+were to her ever were a troube, and sack that it was the sawe his heart, and that should
+not that I would not see that it was it a to be
+done when the counse, and a carting thought he could not
+could not her his hadis with the mander of at a still
 ```
 
 + using python3 to run train_gentext.py and load_gentext.py
+
+load_gentext.py result, make no sense.
 ```
+This morningo(@4g3qg@T:S(@4RsSn@?:@(:;:T@(g:Wb@g:@To3n,%I%IvO@4o*(@o@SR*Z@o(@(g:@mR;(@o*n@4:*(@R'@(g:@W3T(:;@oT@g:%Igon@*R(%Io*n@4RsSn@*R(%I(;o(gTg@o@W3Zg(@o@q:*(;o(@gon%I?oq9@o(@o@T:*(@o*n@(g:@q
+RSK:TT@(go(@gR4@n:T:n@(R@(o9:@g3T@4RsSn@goK:@o@To4@(g:W@o*n@4:*(@R*:@gon@?::*@(R@n;:K:*@(R@(g:@T(3SS@?s(@g3T@4o;n:n%I(g:@moTTb@(go(@(g:;3q:@R'@3*@43(gRs(@o@TRs*n:n@o*n@4gR@T::W@g3T@'3*Z:;b@g:%In3
+n@*R(@qo;(@3*@(g:@T:*(@
 ```
 
 + using python2 to run train_gentext.py  and python3 to run load_gentext.py
