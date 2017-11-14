@@ -1,4 +1,5 @@
 #  An implementation of mLSTM
+This code showed the bug in tensorflow while restore graph variables in python3. Tensorflow version 1.2.1
 ### 1. file desicription
 + MultiplicativeLSTMCell.py
 
