@@ -27,8 +27,10 @@
 import numpy as np
 import tensorflow as tf
 
-# from tensorflow.python.ops.rnn_cell import RNNCell
-from tensorflow.contrib.rnn.python.ops.core_rnn_cell import RNNCell
+### tensorflow 1.2
+from tensorflow.contrib.rnn import RNNCell
+### tensorflow 1.1
+#from tensorflow.contrib.rnn.python.ops.core_rnn_cell import RNNCell
 
 # Thanks to 'initializers_enhanced.py' of Project RNN Enhancement:
 # https://github.com/nicolas-ivanov/Seq2Seq_Upgrade_TensorFlow/blob/master/rnn_enhancement/initializers_enhanced.py
