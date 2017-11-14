@@ -12,7 +12,7 @@ def train_gentext(filename, prime):
     hidden_units = 512
     lr = 5e-4
     keep_prob = 0.5
-    epochs = 2
+    epochs = 20 
     n_save = 1500
     n_samples = 400
 
@@ -21,7 +21,7 @@ def train_gentext(filename, prime):
     checkpoint = tf.train.latest_checkpoint('./checkpoint')
     text = gentext(checkpoint, n_samples, hidden_units, vocab_to_int,
             int_to_vocab, len(vocab), prime=prime)
-    print text
+    print(text)
 
 if __name__ == "__main__":
     train_gentext('anna.txt', 'This morning')
