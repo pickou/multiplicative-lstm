@@ -110,7 +110,7 @@ def build_optimizer(loss, lr, grad_clip):
 # model
 class bytemLSTM:
     def __init__(self, num_class, batch_size=64, num_steps=100,
-                hidden_units=512, lr=0.0005, grad_clip=5, sampling=False):
+                hidden_units=512, lr=0.005, grad_clip=5, sampling=False):
         if sampling == True:
             self.batch_size, self.num_steps = 1, 1
         else:
@@ -134,9 +134,9 @@ def Train(vocab, encoded, epochs, n_save, batch_size,
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         counter = 0
+        new_state = sess.run(model.init_state)
         for e in range(epochs):
             loss = 0
-            new_state = sess.run(model.init_state)
             for x, y in gen_batches(encoded, batch_size, num_steps):
                 counter += 1
                 start = time.time()
