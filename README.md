@@ -25,4 +25,16 @@ Load checkpoint and restore parameters, then generate text.
 + using python2 to run train_gentext.py and load_gentext.py
 
 ```
+
 ```
+
++ using python3 to run train_gentext.py and load_gentext.py
+```
+```
+
++ using python2 to run train_gentext.py  and python3 to run load_gentext.py
+
+The result is the same as the above method using python3 for two .py.
+
+I've checked the checkpoint file using checkpoint reader, the variable and value is right.
+So I think the bug lies in restore in python3, python2 is fine.
