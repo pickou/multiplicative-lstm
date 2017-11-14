@@ -210,22 +210,3 @@ def feature_extract(checkpoint, text, hidden_units, vocab_to_int,
             new_state = sess.run(model.state, feed_dict=feed)
     return new_state
 
-if __name__=="__main__":
-    batch_size = 64
-    num_steps = 100
-    hidden_units = 512 
-    lr = 5e-4
-    keep_prob = 0.5
-    epochs = 2 
-    n_save = 1500
-    n_samples = 400
-    
-    
-    vocab, vocab_to_int, int_to_vocab, encoded = preprocess('./anna.txt')
-    #print(vocab)
-    #vocab, vocab_to_int, int_to_vocab, encoded = preprocess_sms(data)
-    Train(vocab, encoded, epochs, n_save, batch_size, num_steps, keep_prob)
-    checkpoint = tf.train.latest_checkpoint('./checkpoint')
-    text = gentext(checkpoint, n_samples, hidden_units, vocab_to_int, 
-                   int_to_vocab, len(vocab), prime=u'This morining ')
-    print(text)
