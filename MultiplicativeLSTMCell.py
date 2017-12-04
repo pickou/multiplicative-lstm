@@ -148,7 +148,7 @@ class MultiplicativeLSTMCell(RNNCell):
             if self.use_peepholes:
                 c = c_prev * tf.sigmoid(f + self.forget_bias +
                                         w_f_diag * c_prev) + \
-                    tf.sigmoid(i + w_i_diag * c_prev) * j
+                    tf.sigmoid(i + w_i_diag * c_prev) * self.activation(j)
             else:
                 c = c_prev * tf.sigmoid(f + self.forget_bias) + \
                     tf.sigmoid(i) * self.activation(j)
