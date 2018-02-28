@@ -1,9 +1,11 @@
 # coding: utf-8
 import tensorflow as tf
 import numpy as np
+import os
 import time
 import pandas as pd
 import codecs
+import pickle
 from MultiplicativeLSTMCell import MultiplicativeLSTMCell
 
 
@@ -25,10 +27,20 @@ def preprocess_sms(filename):
 
 #input 
 # example for one txt
-def preprocess(filename, encoding='utf-8'):
+def preprocess(filename, encoding='utf-8', saveVocab=False):
     f = codecs.open(filename, 'r', encoding=encoding)
     text = f.read()
-    vocab = set(text)
+    
+    if os.path.exists('vocab.pkl'):
+        with open('vocab.pkl', 'rb') as fr:
+            vocab = pickle.load(fr)
+    else:
+        vocab = list(set(text))
+    
+    if saveVocab:
+        with open('vocab.pkl', 'wb') as fw:
+            pickle.dump(vocab, fw)
+
     vocab_to_int = {c: i for i,c in enumerate(vocab)}
     int_to_vocab = dict(enumerate(vocab))
     encoded = np.array([vocab_to_int[c] for c in text], dtype=np.int32)

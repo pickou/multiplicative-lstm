@@ -16,7 +16,7 @@ def train_gentext(filename, prime):
     n_save = 1500
     n_samples = 400
 
-    vocab, vocab_to_int, int_to_vocab, encoded = preprocess(filename)
+    vocab, vocab_to_int, int_to_vocab, encoded = preprocess(filename, saveVocab=True)
     Train(vocab, encoded, epochs, n_save, batch_size, num_steps, keep_prob)
     checkpoint = tf.train.latest_checkpoint('./checkpoint')
     text = gentext(checkpoint, n_samples, hidden_units, vocab_to_int,
