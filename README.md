@@ -51,3 +51,5 @@ could not her his hadis with the mander of at a still
 
 The code lies a bug in the use of set when encoding a word to int which caused the error 
 that unreasonable results got when restore the graph and generate the next character.
+
+And now everything's fine, and tensorflow has no issues on this.
