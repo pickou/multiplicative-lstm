@@ -1,5 +1,5 @@
 #  An implementation of mLSTM
-This code exposes the bug in tensorflow while restore graph variables in python3. Tensorflow version 1.2.1
+This code use mlstm to generate text. TF 1.4.0, Python 2.7 and Python 3.5.
 ### 1. file desicription
 + MultiplicativeLSTMCell.py
 
@@ -9,7 +9,7 @@ https://github.com/tam17aki/multiplicative-lstm-tensorflow
 His implementation is based on the following paper:
 
 Ben Krause, Liang Lu, Iain Murray, and Steve Renals, "Multiplicative LSTM for sequence modelling, " in Workshop Track of ICLA 2017, https://openreview.net/forum?id=SJCS5rXFl&noteId=SJCS5rXFl
-+ mLSTM.py
++ mlstm.py
 
 This is an implementation which uses mLSTM to predict the next character of a sentence.
 
@@ -49,18 +49,5 @@ done when the counse, and a carting thought he could not
 could not her his hadis with the mander of at a still
 ```
 
-+ using python3 to run train_gentext.py and load_gentext.py
-
-load_gentext.py result, make no sense.
-```
-This morningo(@4g3qg@T:S(@4RsSn@?:@(:;:T@(g:Wb@g:@To3n,%I%IvO@4o*(@o@SR*Z@o(@(g:@mR;(@o*n@4:*(@R'@(g:@W3T(:;@oT@g:%Igon@*R(%Io*n@4RsSn@*R(%I(;o(gTg@o@W3Zg(@o@q:*(;o(@gon%I?oq9@o(@o@T:*(@o*n@(g:@q
-RSK:TT@(go(@gR4@n:T:n@(R@(o9:@g3T@4RsSn@goK:@o@To4@(g:W@o*n@4:*(@R*:@gon@?::*@(R@n;:K:*@(R@(g:@T(3SS@?s(@g3T@4o;n:n%I(g:@moTTb@(go(@(g:;3q:@R'@3*@43(gRs(@o@TRs*n:n@o*n@4gR@T::W@g3T@'3*Z:;b@g:%In3
-n@*R(@qo;(@3*@(g:@T:*(@
-```
-
-+ using python2 to run train_gentext.py  and python3 to run load_gentext.py
-
-The result is the same as the above method using python3 for two .py.
-
-I've checked the checkpoint file using checkpoint reader, the variable and value is right.
-So I think the bug lies in restore in python3, python2 is fine.
+The code lies a bug in the use of set when encoding a word to int which caused the error 
+that unreasonable results got when restore the graph and generate the next character.
