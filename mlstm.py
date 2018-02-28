@@ -39,7 +39,7 @@ def preprocess(filename, encoding='utf-8', saveVocab=False):
     
     if saveVocab:
         with open('vocab.pkl', 'wb') as fw:
-            pickle.dump(vocab, fw)
+            pickle.dump(vocab, fw, protocol=2)
 
     vocab_to_int = {c: i for i,c in enumerate(vocab)}
     int_to_vocab = dict(enumerate(vocab))
